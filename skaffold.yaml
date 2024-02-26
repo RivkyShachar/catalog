@@ -8,15 +8,15 @@ build:
   local:
     push: false
   artifacts:
-    - image: myname/myservicename
-      context: servicename
+    - image: rivkyshachar/auth
+      context: auth
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: myname/myservicename
+    - image: rivkyshachar/client
       context: client
       docker:
         dockerfile: Dockerfile
