@@ -1,6 +1,6 @@
 import express from 'express';
 import 'express-async-errors';
-
+import { NotFoundError } from '@rivky.shachar/common';
 
 import { json } from 'body-parser';
 import { exampleRouter } from './routes/example';
@@ -11,6 +11,10 @@ const app = express();
 app.set('trust proxy', true);
 app.use(json());
 app.use(exampleRouter);
+
+app.all('*', async (req, res) => {
+  throw new NotFoundError();
+});
 
 export { app };
 
