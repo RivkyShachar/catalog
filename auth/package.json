@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rivky.shachar/common": "^1.0.2",
+    "@rivky.shachar/common": "^1.0.6",
     "@types/express": "^4.17.21",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
