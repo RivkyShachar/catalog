@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import { NotFoundError } from '@rivky.shachar/common';
 

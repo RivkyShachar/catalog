@@ -6,21 +6,21 @@ import { natsWrapper } from "./nats-wrapper";
 // it this file will be the connection to db
 
 const start = async () => {
-  if (!process.env.POSTGRES_HOST) {
-    throw new Error("POSTGRES_HOST must be defined");
-  }
-  if (!process.env.POSTGRES_PORT) {
-    throw new Error("POSTGRES_PORT must be defined");
-  }
-  if (!process.env.POSTGRES_USER) {
-    throw new Error("POSTGRES_USER must be defined");
-  }
-  if (!process.env.POSTGRES_PASSWORD) {
-    throw new Error("POSTGRES_PASSWORD must be defined");
-  }
-  if (!process.env.POSTGRES_DB) {
-    throw new Error("POSTGRES_DB must be defined");
-  }
+  // if (!process.env.POSTGRES_HOST) {
+  //   throw new Error("POSTGRES_HOST must be defined");
+  // }
+  // if (!process.env.POSTGRES_PORT) {
+  //   throw new Error("POSTGRES_PORT must be defined");
+  // }
+  // if (!process.env.POSTGRES_USER) {
+  //   throw new Error("POSTGRES_USER must be defined");
+  // }
+  // if (!process.env.POSTGRES_PASSWORD) {
+  //   throw new Error("POSTGRES_PASSWORD must be defined");
+  // }
+  // if (!process.env.POSTGRES_DB) {
+  //   throw new Error("POSTGRES_DB must be defined");
+  // }
   if (!process.env.NATS_CLIENT_ID) {
     throw new Error("NATS_CLIENT_ID must be defined");
   }
