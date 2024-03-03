@@ -1,0 +1,44 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: category-postgres-srv
+# spec:
+#   selector:
+#     app: category-postgres
+#   ports:
+#     - name: db
+#       protocol: TCP
+#       port: 5432
+#       targetPort: 5432
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: category-postgres-depl
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: category-postgres
+#   template:
+#     metadata:
+#       labels:
+#         app: category-postgres
+#     spec:
+#       containers:
+#         - name: category-postgres
+#           image: postgres
+#           env:
+#             - name: POSTGRES_DB
+#               value: example
+#             - name: POSTGRES_USER
+#               value: example
+#             - name: POSTGRES_PASSWORD
+#               value: example
+#               # valueFrom:
+#               #   secretKeyRef:
+#               #     name: postgres-secret
+#               #     key: password
+#           ports:
+#             - containerPort: 5432
+# ---

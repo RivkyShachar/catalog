@@ -23,7 +23,8 @@
 ליצור ארגון פרטי של NPM ולשלם עליו
 
 
-
+pub of common npm is not working correctly
+need to update the code in package.json that it will work
 
 ביום רביעי סדר העבודה:
 
