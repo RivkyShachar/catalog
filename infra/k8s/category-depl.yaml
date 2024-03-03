@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: category-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: category
+  template:
+    metadata:
+      labels:
+        app: category
+    spec:
+      containers:
+        - name: category
+          image: rivkyshachar/category
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: 'http://nats-srv:4222'
+            - name: NATS_CLUSTER_ID
+              value: catalog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: category-srv
+spec:
+  selector:
+    app: category
+  ports:
+    - name: category
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
