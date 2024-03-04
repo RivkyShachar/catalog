@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', async (req: Request, res: Response) => {
+app.get('/category/', async (req: Request, res: Response) => {
     try {
         const data = await pool.query('SELECT * FROM schools');
         res.status(200).send(data.rows);
@@ -24,7 +24,7 @@ app.get('/', async (req: Request, res: Response) => {
     }
 });
 
-app.post('/', async (req: Request, res: Response) => {
+app.post('/category/', async (req: Request, res: Response) => {
     const { name, location } = req.body;
     try {
         await pool.query('INSERT INTO schools (name, address) VALUES ($1, $2)', [name, location]);
@@ -35,7 +35,7 @@ app.post('/', async (req: Request, res: Response) => {
     }
 });
 
-app.get('/setup', async (req: Request, res: Response) => {
+app.get('/category/setup', async (req: Request, res: Response) => {
     try {
         await pool.query('CREATE TABLE schools( id SERIAL PRIMARY KEY, name VARCHAR(100), address VARCHAR(100))');
         res.status(200).send({ message: 'Successfully created table' });

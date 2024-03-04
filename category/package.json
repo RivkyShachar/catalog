@@ -1,5 +1,5 @@
 {
-  "name": "category",
+  "name": "auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,13 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.21",
-    "express": "^4.18.3",
-    "pg": "^8.11.3"
+    "@rivky.shachar/common": "^1.0.6",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.11.3",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
     "@types/pg": "^8.11.2",
-    "ts-node-dev": "^2.0.0",
+    "tslint": "^6.1.3",
     "typescript": "^5.3.3"
   }
 }
